@@ -18,7 +18,7 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),tiare)
 
-$(warning "included tiare android.mk")
+# java_prebuilt_library does not work in soong for Android 8.1.0
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := QPerformance
@@ -28,16 +28,6 @@ LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 LOCAL_MODULE_SUFFIX := .jar
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := com.qualcomm.qti.bluetooth_audio@1.0
-LOCAL_MODULE_OWNER := xiaomi
-LOCAL_SRC_FILES := proprietary/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
-LOCAL_MULTILIB := 32
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_SUFFIX := .so
 include $(BUILD_PREBUILT)
 
 endif
