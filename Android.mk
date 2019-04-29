@@ -14,7 +14,11 @@
 # limitations under the License.
 #
 
+LOCAL_PATH := $(call my-dir)
+
 ifeq ($(TARGET_DEVICE),tiare)
+
+$(warning "included tiare android.mk")
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := QPerformance
