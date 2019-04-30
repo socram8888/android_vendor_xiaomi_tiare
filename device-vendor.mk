@@ -15,9 +15,7 @@
 #
 
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/tiare/proprietary/framework/QPerformance.jar:system/framework/QPerformance.jar \
     vendor/xiaomi/tiare/proprietary/lib/com.qualcomm.qti.bluetooth_audio@1.0.so:system/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 
 PRODUCT_PACKAGES += \
-    QPerformance \
     com.qualcomm.qti.bluetooth_audio@1.0
