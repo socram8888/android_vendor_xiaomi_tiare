@@ -1,0 +1,9 @@
+
+package vendor.qti.hardware.fm@1.0;
+
+typedef vec<uint8_t> HciPacket;
+
+enum Status : uint8_t {
+	SUCCESS,
+	FAILURE
+};

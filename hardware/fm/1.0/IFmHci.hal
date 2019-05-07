@@ -1,0 +1,10 @@
+
+package vendor.qti.hardware.fm@1.0;
+
+import IFmHciCallbacks;
+
+interface IFmHci {
+	initialize(IFmHciCallbacks callbacks);
+	sendHciCommand(vec<uint8_t> command);
+	close();
+};

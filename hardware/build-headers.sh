@@ -11,9 +11,11 @@ while [ ! -d .repo ]; do
 done
 
 buildsubmodule() {
-	local module="$1"
-	local fqdn="$2"
-	hidl-gen -o "${harddir}/${module}/includes" -L c++-headers -r android.hardware:hardware/interfaces -r android.hidl:system/libhidl/transport/ -r com.qualcomm.qti:"$harddir" "${fqdn}"
+	local fqdn="$1"
+	local module="$2"
+	local version="$3"
+	hidl-gen -o "${harddir}/${module}/includes" -L c++-headers -r android.hardware:hardware/interfaces -r android.hidl:system/libhidl/transport/ -r "$fqdn":"$harddir" "${fqdn}.${module}@${version}"
 }
 
-buildsubmodule bluetooth_audio com.qualcomm.qti.bluetooth_audio@1.0
+buildsubmodule com.qualcomm.qti bluetooth_audio 1.0
+buildsubmodule vendor.qti.hardware fm 1.0

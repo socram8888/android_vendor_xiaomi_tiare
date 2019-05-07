@@ -1,0 +1,9 @@
+
+package vendor.qti.hardware.fm@1.0;
+
+import Status;
+
+interface IFmHciCallbacks {
+	initializationComplete(Status status);
+	hciEventReceived(vec<uint8_t> event);
+};
