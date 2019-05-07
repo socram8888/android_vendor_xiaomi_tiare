@@ -32,24 +32,18 @@ struct BsBluetoothAudioCallbacks : IBluetoothAudioCallbacks, ::android::hardware
         #endif // __ANDROID_DEBUGGABLE__
 
         auto _hidl_error = ::android::hardware::Void();
-        auto _hidl_return = addOnewayTask([mImpl = this->mImpl
+        auto _hidl_return = mImpl->a2dp_check_ready();
+
+        atrace_end(ATRACE_TAG_HAL);
         #ifdef __ANDROID_DEBUGGABLE__
-        , mEnableInstrumentation = this->mEnableInstrumentation, mInstrumentationCallbacks = this->mInstrumentationCallbacks
-        #endif // __ANDROID_DEBUGGABLE__
-        ] {
-            mImpl->a2dp_check_ready();
-
-            atrace_end(ATRACE_TAG_HAL);
-            #ifdef __ANDROID_DEBUGGABLE__
-            if (UNLIKELY(mEnableInstrumentation)) {
-                std::vector<void *> _hidl_args;
-                for (const auto &callback: mInstrumentationCallbacks) {
-                    callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_check_ready", &_hidl_args);
-                }
+        if (UNLIKELY(mEnableInstrumentation)) {
+            std::vector<void *> _hidl_args;
+            for (const auto &callback: mInstrumentationCallbacks) {
+                callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_check_ready", &_hidl_args);
             }
-            #endif // __ANDROID_DEBUGGABLE__
+        }
+        #endif // __ANDROID_DEBUGGABLE__
 
-        });
         return _hidl_return;
     }
     ::android::hardware::Return<void> a2dp_stop_stream_req() {
@@ -64,24 +58,18 @@ struct BsBluetoothAudioCallbacks : IBluetoothAudioCallbacks, ::android::hardware
         #endif // __ANDROID_DEBUGGABLE__
 
         auto _hidl_error = ::android::hardware::Void();
-        auto _hidl_return = addOnewayTask([mImpl = this->mImpl
+        auto _hidl_return = mImpl->a2dp_stop_stream_req();
+
+        atrace_end(ATRACE_TAG_HAL);
         #ifdef __ANDROID_DEBUGGABLE__
-        , mEnableInstrumentation = this->mEnableInstrumentation, mInstrumentationCallbacks = this->mInstrumentationCallbacks
-        #endif // __ANDROID_DEBUGGABLE__
-        ] {
-            mImpl->a2dp_stop_stream_req();
-
-            atrace_end(ATRACE_TAG_HAL);
-            #ifdef __ANDROID_DEBUGGABLE__
-            if (UNLIKELY(mEnableInstrumentation)) {
-                std::vector<void *> _hidl_args;
-                for (const auto &callback: mInstrumentationCallbacks) {
-                    callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_stop_stream_req", &_hidl_args);
-                }
+        if (UNLIKELY(mEnableInstrumentation)) {
+            std::vector<void *> _hidl_args;
+            for (const auto &callback: mInstrumentationCallbacks) {
+                callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_stop_stream_req", &_hidl_args);
             }
-            #endif // __ANDROID_DEBUGGABLE__
+        }
+        #endif // __ANDROID_DEBUGGABLE__
 
-        });
         return _hidl_return;
     }
     ::android::hardware::Return<void> a2dp_get_codec_config() {
@@ -96,24 +84,18 @@ struct BsBluetoothAudioCallbacks : IBluetoothAudioCallbacks, ::android::hardware
         #endif // __ANDROID_DEBUGGABLE__
 
         auto _hidl_error = ::android::hardware::Void();
-        auto _hidl_return = addOnewayTask([mImpl = this->mImpl
+        auto _hidl_return = mImpl->a2dp_get_codec_config();
+
+        atrace_end(ATRACE_TAG_HAL);
         #ifdef __ANDROID_DEBUGGABLE__
-        , mEnableInstrumentation = this->mEnableInstrumentation, mInstrumentationCallbacks = this->mInstrumentationCallbacks
-        #endif // __ANDROID_DEBUGGABLE__
-        ] {
-            mImpl->a2dp_get_codec_config();
-
-            atrace_end(ATRACE_TAG_HAL);
-            #ifdef __ANDROID_DEBUGGABLE__
-            if (UNLIKELY(mEnableInstrumentation)) {
-                std::vector<void *> _hidl_args;
-                for (const auto &callback: mInstrumentationCallbacks) {
-                    callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_codec_config", &_hidl_args);
-                }
+        if (UNLIKELY(mEnableInstrumentation)) {
+            std::vector<void *> _hidl_args;
+            for (const auto &callback: mInstrumentationCallbacks) {
+                callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_codec_config", &_hidl_args);
             }
-            #endif // __ANDROID_DEBUGGABLE__
+        }
+        #endif // __ANDROID_DEBUGGABLE__
 
-        });
         return _hidl_return;
     }
     ::android::hardware::Return<void> a2dp_get_sink_latency() {
@@ -128,24 +110,18 @@ struct BsBluetoothAudioCallbacks : IBluetoothAudioCallbacks, ::android::hardware
         #endif // __ANDROID_DEBUGGABLE__
 
         auto _hidl_error = ::android::hardware::Void();
-        auto _hidl_return = addOnewayTask([mImpl = this->mImpl
+        auto _hidl_return = mImpl->a2dp_get_sink_latency();
+
+        atrace_end(ATRACE_TAG_HAL);
         #ifdef __ANDROID_DEBUGGABLE__
-        , mEnableInstrumentation = this->mEnableInstrumentation, mInstrumentationCallbacks = this->mInstrumentationCallbacks
-        #endif // __ANDROID_DEBUGGABLE__
-        ] {
-            mImpl->a2dp_get_sink_latency();
-
-            atrace_end(ATRACE_TAG_HAL);
-            #ifdef __ANDROID_DEBUGGABLE__
-            if (UNLIKELY(mEnableInstrumentation)) {
-                std::vector<void *> _hidl_args;
-                for (const auto &callback: mInstrumentationCallbacks) {
-                    callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_sink_latency", &_hidl_args);
-                }
+        if (UNLIKELY(mEnableInstrumentation)) {
+            std::vector<void *> _hidl_args;
+            for (const auto &callback: mInstrumentationCallbacks) {
+                callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_sink_latency", &_hidl_args);
             }
-            #endif // __ANDROID_DEBUGGABLE__
+        }
+        #endif // __ANDROID_DEBUGGABLE__
 
-        });
         return _hidl_return;
     }
     ::android::hardware::Return<void> a2dp_start_stream_req() {
@@ -160,24 +136,18 @@ struct BsBluetoothAudioCallbacks : IBluetoothAudioCallbacks, ::android::hardware
         #endif // __ANDROID_DEBUGGABLE__
 
         auto _hidl_error = ::android::hardware::Void();
-        auto _hidl_return = addOnewayTask([mImpl = this->mImpl
+        auto _hidl_return = mImpl->a2dp_start_stream_req();
+
+        atrace_end(ATRACE_TAG_HAL);
         #ifdef __ANDROID_DEBUGGABLE__
-        , mEnableInstrumentation = this->mEnableInstrumentation, mInstrumentationCallbacks = this->mInstrumentationCallbacks
-        #endif // __ANDROID_DEBUGGABLE__
-        ] {
-            mImpl->a2dp_start_stream_req();
-
-            atrace_end(ATRACE_TAG_HAL);
-            #ifdef __ANDROID_DEBUGGABLE__
-            if (UNLIKELY(mEnableInstrumentation)) {
-                std::vector<void *> _hidl_args;
-                for (const auto &callback: mInstrumentationCallbacks) {
-                    callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_start_stream_req", &_hidl_args);
-                }
+        if (UNLIKELY(mEnableInstrumentation)) {
+            std::vector<void *> _hidl_args;
+            for (const auto &callback: mInstrumentationCallbacks) {
+                callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_start_stream_req", &_hidl_args);
             }
-            #endif // __ANDROID_DEBUGGABLE__
+        }
+        #endif // __ANDROID_DEBUGGABLE__
 
-        });
         return _hidl_return;
     }
     ::android::hardware::Return<void> a2dp_suspend_stream_req() {
@@ -192,24 +162,18 @@ struct BsBluetoothAudioCallbacks : IBluetoothAudioCallbacks, ::android::hardware
         #endif // __ANDROID_DEBUGGABLE__
 
         auto _hidl_error = ::android::hardware::Void();
-        auto _hidl_return = addOnewayTask([mImpl = this->mImpl
+        auto _hidl_return = mImpl->a2dp_suspend_stream_req();
+
+        atrace_end(ATRACE_TAG_HAL);
         #ifdef __ANDROID_DEBUGGABLE__
-        , mEnableInstrumentation = this->mEnableInstrumentation, mInstrumentationCallbacks = this->mInstrumentationCallbacks
-        #endif // __ANDROID_DEBUGGABLE__
-        ] {
-            mImpl->a2dp_suspend_stream_req();
-
-            atrace_end(ATRACE_TAG_HAL);
-            #ifdef __ANDROID_DEBUGGABLE__
-            if (UNLIKELY(mEnableInstrumentation)) {
-                std::vector<void *> _hidl_args;
-                for (const auto &callback: mInstrumentationCallbacks) {
-                    callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_suspend_stream_req", &_hidl_args);
-                }
+        if (UNLIKELY(mEnableInstrumentation)) {
+            std::vector<void *> _hidl_args;
+            for (const auto &callback: mInstrumentationCallbacks) {
+                callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_suspend_stream_req", &_hidl_args);
             }
-            #endif // __ANDROID_DEBUGGABLE__
+        }
+        #endif // __ANDROID_DEBUGGABLE__
 
-        });
         return _hidl_return;
     }
     ::android::hardware::Return<void> a2dp_get_multicast_status() {
@@ -224,24 +188,18 @@ struct BsBluetoothAudioCallbacks : IBluetoothAudioCallbacks, ::android::hardware
         #endif // __ANDROID_DEBUGGABLE__
 
         auto _hidl_error = ::android::hardware::Void();
-        auto _hidl_return = addOnewayTask([mImpl = this->mImpl
+        auto _hidl_return = mImpl->a2dp_get_multicast_status();
+
+        atrace_end(ATRACE_TAG_HAL);
         #ifdef __ANDROID_DEBUGGABLE__
-        , mEnableInstrumentation = this->mEnableInstrumentation, mInstrumentationCallbacks = this->mInstrumentationCallbacks
-        #endif // __ANDROID_DEBUGGABLE__
-        ] {
-            mImpl->a2dp_get_multicast_status();
-
-            atrace_end(ATRACE_TAG_HAL);
-            #ifdef __ANDROID_DEBUGGABLE__
-            if (UNLIKELY(mEnableInstrumentation)) {
-                std::vector<void *> _hidl_args;
-                for (const auto &callback: mInstrumentationCallbacks) {
-                    callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_multicast_status", &_hidl_args);
-                }
+        if (UNLIKELY(mEnableInstrumentation)) {
+            std::vector<void *> _hidl_args;
+            for (const auto &callback: mInstrumentationCallbacks) {
+                callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_multicast_status", &_hidl_args);
             }
-            #endif // __ANDROID_DEBUGGABLE__
+        }
+        #endif // __ANDROID_DEBUGGABLE__
 
-        });
         return _hidl_return;
     }
     ::android::hardware::Return<void> a2dp_get_connection_status() {
@@ -256,24 +214,18 @@ struct BsBluetoothAudioCallbacks : IBluetoothAudioCallbacks, ::android::hardware
         #endif // __ANDROID_DEBUGGABLE__
 
         auto _hidl_error = ::android::hardware::Void();
-        auto _hidl_return = addOnewayTask([mImpl = this->mImpl
+        auto _hidl_return = mImpl->a2dp_get_connection_status();
+
+        atrace_end(ATRACE_TAG_HAL);
         #ifdef __ANDROID_DEBUGGABLE__
-        , mEnableInstrumentation = this->mEnableInstrumentation, mInstrumentationCallbacks = this->mInstrumentationCallbacks
-        #endif // __ANDROID_DEBUGGABLE__
-        ] {
-            mImpl->a2dp_get_connection_status();
-
-            atrace_end(ATRACE_TAG_HAL);
-            #ifdef __ANDROID_DEBUGGABLE__
-            if (UNLIKELY(mEnableInstrumentation)) {
-                std::vector<void *> _hidl_args;
-                for (const auto &callback: mInstrumentationCallbacks) {
-                    callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_connection_status", &_hidl_args);
-                }
+        if (UNLIKELY(mEnableInstrumentation)) {
+            std::vector<void *> _hidl_args;
+            for (const auto &callback: mInstrumentationCallbacks) {
+                callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_connection_status", &_hidl_args);
             }
-            #endif // __ANDROID_DEBUGGABLE__
+        }
+        #endif // __ANDROID_DEBUGGABLE__
 
-        });
         return _hidl_return;
     }
     ::android::hardware::Return<void> a2dp_get_num_connected_devices() {
@@ -288,24 +240,18 @@ struct BsBluetoothAudioCallbacks : IBluetoothAudioCallbacks, ::android::hardware
         #endif // __ANDROID_DEBUGGABLE__
 
         auto _hidl_error = ::android::hardware::Void();
-        auto _hidl_return = addOnewayTask([mImpl = this->mImpl
+        auto _hidl_return = mImpl->a2dp_get_num_connected_devices();
+
+        atrace_end(ATRACE_TAG_HAL);
         #ifdef __ANDROID_DEBUGGABLE__
-        , mEnableInstrumentation = this->mEnableInstrumentation, mInstrumentationCallbacks = this->mInstrumentationCallbacks
-        #endif // __ANDROID_DEBUGGABLE__
-        ] {
-            mImpl->a2dp_get_num_connected_devices();
-
-            atrace_end(ATRACE_TAG_HAL);
-            #ifdef __ANDROID_DEBUGGABLE__
-            if (UNLIKELY(mEnableInstrumentation)) {
-                std::vector<void *> _hidl_args;
-                for (const auto &callback: mInstrumentationCallbacks) {
-                    callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_num_connected_devices", &_hidl_args);
-                }
+        if (UNLIKELY(mEnableInstrumentation)) {
+            std::vector<void *> _hidl_args;
+            for (const auto &callback: mInstrumentationCallbacks) {
+                callback(InstrumentationEvent::PASSTHROUGH_EXIT, "com.qualcomm.qti.bluetooth_audio", "1.0", "IBluetoothAudioCallbacks", "a2dp_get_num_connected_devices", &_hidl_args);
             }
-            #endif // __ANDROID_DEBUGGABLE__
+        }
+        #endif // __ANDROID_DEBUGGABLE__
 
-        });
         return _hidl_return;
     }
 
