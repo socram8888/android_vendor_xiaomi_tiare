@@ -1,0 +1,5 @@
+cc_prebuilt_library_shared {
+	name: "com.qualcomm.qti.bluetooth_audio@1.0",
+	srcs: ["com.qualcomm.qti.bluetooth_audio@1.0.so"],
+	export_include_dirs: ["includes"]
+}
